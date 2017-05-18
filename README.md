@@ -1,5 +1,6 @@
 # Node Tutorial Walkthrough
 Resources include
+  * [Node.js](https://nodejs.org/en/)
   * [Node Guide](http://nodeguide.com/)
   * [Tutorials Teacher](http://www.tutorialsteacher.com/nodejs/what-is-nodejs)
   * [The Node Beginner Book](http://www.nodebeginner.org/)
