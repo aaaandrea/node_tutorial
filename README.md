@@ -60,19 +60,19 @@
     * To load a module: ` let module = require('module');`
     * These are compiled and loaded when the Node.js process starts
 
-  | Core Module | Description                                   |
-  |-------------|-----------------------------------------------|
-  | http        | classes, methods, and events to create server |
-  | url         | methods for URL parsing                       |
-  | querystring | deals with query                              |
-  | path        | deals with file path                          |
-  | fs          | classes, methods, and events for file I/O     |
-  | util        | useful functions                              |
+    | Core Module | Description                                   |
+    |-------------|-----------------------------------------------|
+    | http        | classes, methods, and events to create server |
+    | url         | methods for URL parsing                       |
+    | querystring | deals with query                              |
+    | path        | deals with file path                          |
+    | fs          | classes, methods, and events for file I/O     |
+    | util        | useful functions                              |
 
 
 2. Local Modules - provide different functionalities. distributed by the community.
 
-    * Writing a module [Source](http://www.tutorialsteacher.com/nodejs/nodejs-local-modules)
+    * Writing a module
 
       log.js
       ```
@@ -139,3 +139,26 @@
 
 
 ### npm: Node Package Manager
+  Online repository for open-source packages which provide useful modules for Node.js
+  [Official Site](https://www.npmjs.com)
+
+  * `npm install`
+  * `npm install <package name>`
+  * `npm install <package name> --save` - adds dependency to package.json
+
+  package.json
+  ```
+  {
+    "name": "NodejsConsoleApp",
+    "version": "0.0.0",
+    "description": "NodejsConsoleApp",
+    "main": "app.js",
+    "author": {
+      "name": "Dev",
+      "email": ""
+    },
+    "dependencies": {
+      "express": "^4.13.3"
+    }
+  }
+  ```
