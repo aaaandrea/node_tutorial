@@ -57,6 +57,7 @@
 
 ### Modules
   1. Core Modules - modules inherent to Node.js
+    * To load a module: ` let module = require('module');`
 
     | Core Module | Description                                   |
     |-------------|-----------------------------------------------|
@@ -67,7 +68,6 @@
     | fs          | classes, methods, and events for file I/O     |
     | util        | useful functions                              |
 
-    * To load a module: ` let module = require('module');`
 
   2. Local Modules - provide different functionalities. distributed by the community.
 
