@@ -60,14 +60,14 @@
     * To load a module: ` let module = require('module');`
     * These are compiled and loaded when the Node.js process starts
 
-    | Core Module | Description                                   |
-    |-------------|-----------------------------------------------|
-    | http        | classes, methods, and events to create server |
-    | url         | methods for URL parsing                       |
-    | querystring | deals with query                              |
-    | path        | deals with file path                          |
-    | fs          | classes, methods, and events for file I/O     |
-    | util        | useful functions                              |
+  | Core Module | Description                                   |
+  |-------------|-----------------------------------------------|
+  | http        | classes, methods, and events to create server |
+  | url         | methods for URL parsing                       |
+  | querystring | deals with query                              |
+  | path        | deals with file path                          |
+  | fs          | classes, methods, and events for file I/O     |
+  | util        | useful functions                              |
 
 
   2. Local Modules - provide different functionalities. distributed by the community.
