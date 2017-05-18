@@ -1,4 +1,4 @@
-## Node Tutorial Walkthrough
+## Node Notes
 **Resources include:**
   * [Node.js](https://nodejs.org/en/)
   * [Node Guide](http://nodeguide.com/)
@@ -56,16 +56,34 @@
 
 
 ### Modules
-* Core Modules
+  1. Core Modules - modules inherent to Node.js
 
-  | Core Module | Description                                   |
-  |-------------|-----------------------------------------------|
-  | http        | classes, methods, and events to create server |
-  | url         | methods for URL parsing                       |
-  | querystring | deals with query                              |
-  | path        | deals with file path                          |
-  | fs          | classes, methods, and events for file I/O     |
-  | util        | useful functions                              |
+    | Core Module | Description                                   |
+    |-------------|-----------------------------------------------|
+    | http        | classes, methods, and events to create server |
+    | url         | methods for URL parsing                       |
+    | querystring | deals with query                              |
+    | path        | deals with file path                          |
+    | fs          | classes, methods, and events for file I/O     |
+    | util        | useful functions                              |
 
-  * Loading
-    ` let module = require('module');`
+    * To load a module: ` let module = require('module');`
+
+  2. Local Modules - provide different functionalities. distributed by the community.
+
+    * Writing a module [Source](http://www.tutorialsteacher.com/nodejs/nodejs-local-modules)
+      ```
+      var log = {
+            info: function (info) {
+                console.log('Info: ' + info);
+            },
+            warning:function (warning) {
+                console.log('Warning: ' + warning);
+            },
+            error:function (error) {
+                console.log('Error: ' + error);
+            }
+          };
+
+      module.exports = log
+      ```
