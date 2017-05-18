@@ -7,5 +7,10 @@ Resources include
 # Background
 
 # Basic stack
+  * HTTP server
+  * Router
+  * Request data handlers
+  * View logic
+  * Upload handling
 
 # Building a server
