@@ -72,6 +72,8 @@
   2. Local Modules - provide different functionalities. distributed by the community.
 
     * Writing a module [Source](http://www.tutorialsteacher.com/nodejs/nodejs-local-modules)
+
+      log.js
       ```
       var log = {
             info: function (info) {
@@ -86,4 +88,12 @@
           };
 
       module.exports = log
+      ```
+
+    * Loading a module
+      app.js
+      ```
+      var myLogModule = require('./Log.js');
+
+      myLogModule.info('Node.js started');
       ```
