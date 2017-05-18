@@ -58,6 +58,7 @@
 ### Modules
   1. Core Modules - modules inherent to Node.js
     * To load a module: ` let module = require('module');`
+    * These are compiled and loaded when the Node.js process starts
 
     | Core Module | Description                                   |
     |-------------|-----------------------------------------------|
