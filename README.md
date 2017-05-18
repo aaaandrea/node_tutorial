@@ -92,6 +92,7 @@
       ```
 
     * Loading a module
+
       app.js
       ```
       var myLogModule = require('./Log.js');
@@ -119,6 +120,7 @@
     ```
 
   * exports - an object which can have methods attached.
+
     message.js
     ```
     exports.SimpleMessage = 'Hello world';
@@ -134,3 +136,6 @@
 
     console.log(msg.SimpleMessage);
     ```
+
+
+### npm: Node Package Manager
