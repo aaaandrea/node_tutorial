@@ -53,3 +53,14 @@
 
   http.createServer(onRequest).listen(8888);
   ```
+
+
+### Modules
+| Core Module | Description                                   |
+|-------------|-----------------------------------------------|
+| http        | classes, methods, and events to create server |
+| url         | methods for URL parsing                       |
+| querystring | deals with query                              |
+| path        | deals with file path                          |
+| fs          | classes, methods, and events for file I/O     |
+| util        | useful functions                              |
