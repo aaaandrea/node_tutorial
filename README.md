@@ -145,6 +145,8 @@
   * `npm install`
   * `npm install <package name>`
   * `npm install <package name> --save` - adds dependency to package.json
+  * `npm install -g <package name>` - installs package globally
+  * `npm update <package name>` - updates package
 
   package.json
   ```
