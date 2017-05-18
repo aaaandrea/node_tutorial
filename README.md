@@ -56,7 +56,7 @@
 
 
 ### Modules
-  1. Core Modules - modules inherent to Node.js
+1. Core Modules - modules inherent to Node.js
     * To load a module: ` let module = require('module');`
     * These are compiled and loaded when the Node.js process starts
 
@@ -70,7 +70,7 @@
   | util        | useful functions                              |
 
 
-  2. Local Modules - provide different functionalities. distributed by the community.
+2. Local Modules - provide different functionalities. distributed by the community.
 
     * Writing a module [Source](http://www.tutorialsteacher.com/nodejs/nodejs-local-modules)
 
@@ -98,3 +98,39 @@
 
       myLogModule.info('Node.js started');
       ```
+
+3. module.exports
+  * literals
+
+    message.js
+    ```
+    module.exports = 'Hello world';
+
+    //or
+
+    exports = 'Hello world';
+    ```
+
+    app.js
+    ```
+    var msg = require('./Messages.js');
+
+    console.log(msg);
+    ```
+
+  * exports - an object which can have methods attached.
+    message.js
+    ```
+    exports.SimpleMessage = 'Hello world';
+
+    //or
+
+    module.exports.SimpleMessage = 'Hello world';
+    ```
+
+    app.js
+    ```
+    var msg = require('./Messages.js');
+
+    console.log(msg.SimpleMessage);
+    ```
