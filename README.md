@@ -57,6 +57,7 @@
 
 ### Modules
 * Core Modules
+
   | Core Module | Description                                   |
   |-------------|-----------------------------------------------|
   | http        | classes, methods, and events to create server |
