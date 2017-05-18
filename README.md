@@ -1,4 +1,4 @@
-# Node Tutorial Walkthrough
+## Node Tutorial Walkthrough
 **Resources include:**
   * [Node.js](https://nodejs.org/en/)
   * [Node Guide](http://nodeguide.com/)
@@ -6,17 +6,17 @@
   * [The Node Beginner Book](http://www.nodebeginner.org/)
   * [Code Mentor](https://www.codementor.io/olatundegaruba/nodejs-restful-apis-in-10-minutes-q0sgsfhbd)
 
-## Background
+### Background
   Node.js is simultaneously a runtime environment and a library. Rather than relying on the browser, Node.js allows for a JavaScript backend to be run server-side. This means even-driven asynchronous calls, agnostic of the environment.
 
-## Basic stack
+### Basic stack
   * HTTP server
   * Router
   * Request data handlers
   * View logic
   * Upload handling
 
-## Building a server
+### Building a server
   The Node.js is a single process server, which runs the code in a single thread. This means less resources than a multi-threaded/multi process server. An event loop runs asynchronously, executing the response when the job completes.
 
   ```
@@ -30,3 +30,19 @@
 
   http.createServer(onRequest).listen(8888);
   ```
+
+### Node REPL
+  Read - Eval - Print - Loop
+
+  | REPL Command     | Description                              |
+  |------------------|------------------------------------------|
+  | .help            | Display help commands                    |
+  | tab keys         | Display list of comands                  |
+  | up/down          | See previous commands                    |
+  | .save <filename> | Save current Node REPL session to a file |
+  | .load <filename> | Load specified file                      |
+  | ctrl + c         | Terminate current command                |
+  | ctrl + c (twice) | Exit REPL                                |
+  | ctrl + d         | Exit REPL                                |
+  | .break           | Exit multiline expression                |
+  | .clear           | Exit multiline expression                |
