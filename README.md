@@ -122,7 +122,7 @@
     ```
 
 
-### npm: Node Package Manager
+### Node Package Manager: npm
   Online repository for open-source packages which provide useful modules for Node.js
   [Official Site](https://www.npmjs.com)
   [Docs](https://docs.npmjs.com/)
@@ -152,22 +152,24 @@
   ```
 
 
-  ### Building a server
-    The Node.js is a single process server, which runs the code in a single thread. This means less resources than a multi-threaded/multi process server. An event loop runs asynchronously, executing the response when the job completes.
+### Building a server
+  The Node.js is a single process server, which runs the code in a single thread. This means less resources than a multi-threaded/multi process server. An event loop runs asynchronously, executing the response when the job completes.
 
-    ```
-    let http = require("http");
+  ```
+  let http = require("http");
 
-    let onRequest = (request, response) => {
-      response.writeHead(200, {"Content-Type": "text/plain"});
-      response.write("Hello World");
-      response.end();
-    };
+  let onRequest = (request, response) => {
+    response.writeHead(200, {"Content-Type": "text/plain"});
+    response.write("Hello World");
+    response.end();
+  };
 
-    http.createServer(onRequest).listen(8888);
-    ```
-    
-    1. Import the core http module from Node.js
-    2. Handle incoming requests
-    3. Create Server (passed what to do when there is a request)
-    4. Listen for incoming requests
+  http.createServer(onRequest).listen(8888);
+  ```
+
+  1. Import the core http module from Node.js
+  2. Handle incoming requests
+  3. Create Server (passed callback for when there is a request)
+    * request: gets information about current HTTP request
+    * response: used to send a response for HTTP request
+  4. Listen for incoming requests
