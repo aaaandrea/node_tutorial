@@ -25,8 +25,7 @@
 ### Node REPL
   short for Read - Eval - Print - Loop
 
-    [REPL Commands](https://nodejs.org/api/repl.html)
-
+    REPL Commands - [doc link](https://nodejs.org/api/repl.html)
 
     | REPL Command     | Description                              |
     |------------------|------------------------------------------|
