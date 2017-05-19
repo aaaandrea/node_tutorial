@@ -25,6 +25,8 @@
 ### Node REPL
   short for Read - Eval - Print - Loop
 
+    REPL Commands
+
     | REPL Command     | Description                              |
     |------------------|------------------------------------------|
     | .help            | Display help commands                    |
@@ -202,7 +204,7 @@
 ### Files
   The fs module is responsible for asynchronous and synchornous I/O file operations
 
-  fs methods
+    fs module methods
 
     | Method                                            | Description                                                                               |
     |---------------------------------------------------|-------------------------------------------------------------------------------------------|
