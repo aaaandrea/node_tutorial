@@ -170,6 +170,34 @@
   1. Import the core http module from Node.js
   2. Handle incoming requests
   3. Create Server (passed callback for when there is a request)
-    * request: gets information about current HTTP request
-    * response: used to send a response for HTTP request
+      * request: gets information about current HTTP request
+      * response: used to send a response for HTTP request
   4. Listen for incoming requests
+
+### Files
+  The fs module is responsible for asynchronous and synchornous I/O file operations
+
+#### Reading Files
+    * fs.readFile(fileName, [options], callback): async
+      * fileName: full path and name of the file as a string
+      * options: can be an object or string with encoding and flag. Default encoding is utf8 and flag is 'r'
+      * callback: function with two parameters(err, fd) which will be called when readfile operation completes
+
+      ```
+      var fs = require('fs');
+
+      fs.readFile('TestFile.txt', function (err, data) {
+          if (err) throw err;
+
+          console.log(data);
+      });
+      ```
+
+    * fs.readFileSync(fileName, encoding)
+
+      ```
+      var fs = require('fs');
+
+      var data = fs.readFileSync('dummyfile.txt', 'utf8');
+      console.log(data);
+      ```
