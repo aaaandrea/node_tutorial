@@ -54,6 +54,14 @@
     | Pause   | Paise running code                                              |    
 
 
+#### Node Inspector
+  * more on npm in the Node Package Manager section
+  * `npm install -g node-instpector` - to install
+  * `node-inspector` - to run and follow instructions
+    * `node-inspector --web-port=5500` - if you get an error
+  * `node --debug-br <filename>` - to begin debugging
+
+
 ### Modules
 1. Core Modules - modules inherent to Node.js
     * To load a module: ` let module = require('module');`
