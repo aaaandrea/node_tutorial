@@ -39,22 +39,6 @@
   | .clear           | Exit multiline expression                |
 
 
-### Building a server
-  The Node.js is a single process server, which runs the code in a single thread. This means less resources than a multi-threaded/multi process server. An event loop runs asynchronously, executing the response when the job completes.
-
-  ```
-  let http = require("http");
-
-  let onRequest = (request, response) => {
-    response.writeHead(200, {"Content-Type": "text/plain"});
-    response.write("Hello World");
-    response.end();
-  };
-
-  http.createServer(onRequest).listen(8888);
-  ```
-
-
 ### Modules
 1. Core Modules - modules inherent to Node.js
     * To load a module: ` let module = require('module');`
@@ -141,12 +125,14 @@
 ### npm: Node Package Manager
   Online repository for open-source packages which provide useful modules for Node.js
   [Official Site](https://www.npmjs.com)
+  [Docs](https://docs.npmjs.com/)
 
   * `npm install`
   * `npm install <package name>`
   * `npm install <package name> --save` - adds dependency to package.json
   * `npm install -g <package name>` - installs package globally
   * `npm update <package name>` - updates package
+  * `npm uninstall <package name>` - uninstalls package
 
   package.json
   ```
@@ -164,3 +150,24 @@
     }
   }
   ```
+
+
+  ### Building a server
+    The Node.js is a single process server, which runs the code in a single thread. This means less resources than a multi-threaded/multi process server. An event loop runs asynchronously, executing the response when the job completes.
+
+    ```
+    let http = require("http");
+
+    let onRequest = (request, response) => {
+      response.writeHead(200, {"Content-Type": "text/plain"});
+      response.write("Hello World");
+      response.end();
+    };
+
+    http.createServer(onRequest).listen(8888);
+    ```
+    
+    1. Import the core http module from Node.js
+    2. Handle incoming requests
+    3. Create Server (passed what to do when there is a request)
+    4. Listen for incoming requests
