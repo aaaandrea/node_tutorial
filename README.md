@@ -38,6 +38,21 @@
   | .break           | Exit multiline expression                |
   | .clear           | Exit multiline expression                |
 
+  * open specific file with `node debug <filename>`
+    * opens the debugger and starts at the first line
+
+    debugging commands - [doc link](https://nodejs.org/api/debugger.html)
+
+    | Command | Description                                                     |
+    |---------|-----------------------------------------------------------------|
+    | next    | Stop at the next statement                                      |
+    | cont    | Continue, execute, and stop at the next debugger statement      |
+    | step    | Step into a function                                            |
+    | out     | Step out of a function                                          |
+    | watch   | Add the expression or variable into watch (eg. watch('data')    |
+    | watcher | See the value of all expressions and variables added into watch |
+    | Pause   | Paise running code                                              |    
+
 
 ### Modules
 1. Core Modules - modules inherent to Node.js
@@ -179,6 +194,7 @@
   The fs module is responsible for asynchronous and synchornous I/O file operations
 
   fs methods
+
   | Method                                            | Description                                                                               |
   |---------------------------------------------------|-------------------------------------------------------------------------------------------|
   | fs.readFile(fileName [,options], callback)        | Reads existing file.                                                                      |
@@ -322,3 +338,6 @@
     });
 
     ```
+
+
+### Debugging
