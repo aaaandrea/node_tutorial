@@ -179,6 +179,7 @@
   The Node.js is a single process server, which runs the code in a single thread. This means less resources than a multi-threaded/multi process server. An event loop runs asynchronously, executing the response when the job completes.
 
   ```
+  // server.js
   let http = require("http");
 
   let onRequest = (request, response) => {
@@ -347,3 +348,66 @@
     });
 
     ```
+
+
+### EventEmitter
+create and handle custom events with events module, which includes the EventEmitter class
+
+  ```
+  // raise and handle events
+  // get the reference of EventEmitter class of events module
+  var events = require('events');
+
+  //create an object of EventEmitter class by using above reference
+  var em = new events.EventEmitter();
+
+  //Subscribe for FirstEvent
+  em.on('FirstEvent', function (data) {
+      console.log('First subscriber: ' + data);
+  });
+
+  // Raising FirstEvent
+  em.emit('FirstEvent', 'This is my first Node.js event emitter example.');
+
+  ```
+
+
+  ```
+  // event listeners
+  var emitter = require('events').EventEmitter;
+
+  var em = new emitter();
+
+  //Subscribe FirstEvent
+  em.addListener('FirstEvent', function (data) {
+      console.log('First subscriber: ' + data);
+  });
+
+  //Subscribe SecondEvent
+  em.on('SecondEvent', function (data) {
+      console.log('First subscriber: ' + data);
+  });
+
+  // Raising FirstEvent
+  em.emit('FirstEvent', 'This is my first Node.js event emitter example.');
+
+  // Raising SecondEvent
+  em.emit('SecondEvent', 'This is my second Node.js event emitter example.');
+
+  ```
+
+
+#### All key EventEmitter Methods
+
+  | EventEmitter Methods                       | Description                                                                                                                                                                                             |
+  |--------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+  | emitter.addListener(event, listener)       | Adds a listener to the end of the listeners array for the specified event. No checks are made to see if the listener has already been added.                                                            |
+  | emitter.on(event, listener)                | Adds a listener to the end of the listeners array for the specified event. No checks are made to see if the listener has already been added. It can also be called as an alias of emitter.addListener() |
+  | emitter.once(event, listener)              | Adds a one time listener for the event. This listener is invoked only the next time the event is fired, after which it is removed.                                                                      |
+  | emitter.removeListener(event, listener)    | Removes a listener from the listener array for the specified event. Caution: changes array indices in the listener array behind the listener.                                                           |
+  | emitter.removeAllListeners([event])        | Removes all listeners, or those of the specified event.                                                                                                                                                 |
+  | emitter.setMaxListeners(n)                 | By default EventEmitters will print a warning if more than 10 listeners are added for a particular event.                                                                                               |
+  | emitter.getMaxListeners()                  | Returns the current maximum listener value for the emitter which is either set by emitter.setMaxListeners(n) or defaults to EventEmitter.defaultMaxListeners.                                           |
+  | emitter.listeners(event)                   | Returns a copy of the array of listeners for the specified event.                                                                                                                                       |
+  | emitter.emit(event[, arg1][, arg2][, ...]) | Raise the specified events with the supplied arguments.                                                                                                                                                 |
+  | emitter.listenerCount(type)                | Returns the number of listeners listening to the type of event.                                                                                                                                         |
