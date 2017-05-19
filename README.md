@@ -402,6 +402,8 @@ create and handle custom events with events module, which includes the EventEmit
 
 #### Key EventEmitter Methods
 
+  * list of a few key methods - [doc link](https://nodejs.org/api/events.html)
+
     | EventEmitter Methods                       | Description                                                                                                                                                                                             |
     |--------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
     | emitter.addListener(event, listener)       | Adds a listener to the end of the listeners array for the specified event. No checks are made to see if the listener has already been added.                                                            |
