@@ -397,7 +397,7 @@ create and handle custom events with events module, which includes the EventEmit
   ```
 
 
-#### All key EventEmitter Methods
+#### Key EventEmitter Methods
 
   | EventEmitter Methods                       | Description                                                                                                                                                                                             |
   |--------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -409,5 +409,80 @@ create and handle custom events with events module, which includes the EventEmit
   | emitter.setMaxListeners(n)                 | By default EventEmitters will print a warning if more than 10 listeners are added for a particular event.                                                                                               |
   | emitter.getMaxListeners()                  | Returns the current maximum listener value for the emitter which is either set by emitter.setMaxListeners(n) or defaults to EventEmitter.defaultMaxListeners.                                           |
   | emitter.listeners(event)                   | Returns a copy of the array of listeners for the specified event.                                                                                                                                       |
-  | emitter.emit(event[, arg1][, arg2][, ...]) | Raise the specified events with the supplied arguments.                                                                                                                                                 |
+  | emitter.emit(event,[arg1],[arg2],[...]) | Raise the specified events with the supplied arguments.                                                                                                                                                 |
   | emitter.listenerCount(type)                | Returns the number of listeners listening to the type of event.                                                                                                                                         |
+
+
+#### eg. Return EventEmitter for a function
+  commonly used to subscribe for the events, using the return value of a function and binding them to events using `on()` or `addListener()`
+
+  ```
+  var emitter = require('events').EventEmitter;
+
+  function LoopProcessor(num) {
+      var e = new emitter();
+
+      setTimeout(function () {
+
+          for (var i = 1; i <= num; i++) {
+              e.emit('BeforeProcess', i);
+
+              console.log('Processing number:' + i);
+
+              e.emit('AfterProcess', i);
+          }
+      }
+      , 2000)
+
+      return e;
+  }
+  var lp = LoopProcessor(3);
+
+  lp.on('BeforeProcess', function (data) {
+      console.log('About to start the process for ' + data);
+  });
+
+  lp.on('AfterProcess', function (data) {
+      console.log('Completed processing ' + data);
+  });
+  ```
+
+#### eg. Extend EventEmitter Class
+  Extend a constructor from EventEmitter to emit the events, allowing the new class to inherit the methods to be used in process objects such that they can handle their own events
+
+  ```
+  var emitter = require('events').EventEmitter;
+
+  var util = require('util');
+
+  function LoopProcessor(num) {
+      var me = this;
+
+      setTimeout(function () {
+
+          for (var i = 1; i <= num; i++) {
+              me.emit('BeforeProcess', i);
+
+              console.log('Processing number:' + i);
+
+              me.emit('AfterProcess', i);
+          }
+      }
+      , 2000)
+
+      return this;
+  }
+
+  util.inherits(LoopProcessor, emitter)
+
+  var lp = new LoopProcessor(3);
+
+  lp.on('BeforeProcess', function (data) {
+      console.log('About to start the process for ' + data);
+  });
+
+  lp.on('AfterProcess', function (data) {
+      console.log('Completed processing ' + data);
+  });
+
+  ```
