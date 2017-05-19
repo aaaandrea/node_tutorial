@@ -174,30 +174,115 @@
       * response: used to send a response for HTTP request
   4. Listen for incoming requests
 
+
 ### Files
   The fs module is responsible for asynchronous and synchornous I/O file operations
 
 #### Reading Files
-    * fs.readFile(fileName, [options], callback): async
-      * fileName: full path and name of the file as a string
-      * options: can be an object or string with encoding and flag. Default encoding is utf8 and flag is 'r'
-      * callback: function with two parameters(err, fd) which will be called when readfile operation completes
+  * fs.readFile(fileName, [options], callback): async
+    * fileName: full path and name of the file as a string
+    * options: can be an object or string with encoding and flag. Default encoding is utf8 and flag is 'r'
+    * callback: function with two parameters(err, fd) which will be called when readfile operation completes
 
-      ```
-      var fs = require('fs');
+    ```
+    var fs = require('fs');
 
-      fs.readFile('TestFile.txt', function (err, data) {
-          if (err) throw err;
+    fs.readFile('TestFile.txt', function (err, data) {
+        if (err) throw err;
 
-          console.log(data);
-      });
-      ```
+        console.log(data);
+    });
+    ```
 
-    * fs.readFileSync(fileName, encoding)
+  * fs.readFileSync(fileName, encoding)
 
-      ```
-      var fs = require('fs');
+    ```
+    var fs = require('fs');
 
-      var data = fs.readFileSync('dummyfile.txt', 'utf8');
-      console.log(data);
-      ```
+    var data = fs.readFileSync('dummyfile.txt', 'utf8');
+    console.log(data);
+    ```
+
+#### Writing Files
+  * fs.writeFile(filename, data, [options], callback)
+    * only difference from before is 'data' which is just the content to be written in the file
+
+    async: creating AND writing a file
+
+    ```
+    var fs = require('fs');
+
+    fs.writeFile('test.txt', 'Hello World!', function (err) {
+        if (err)
+            console.log(err);
+        else
+            console.log('Write operation complete.');
+    });
+    ```
+
+    async: appends to existing file
+
+    ```
+    var fs = require('fs');
+
+    fs.appendFile('test.txt', 'Hello World!', function (err) {
+        if (err)
+            console.log(err);
+        else
+            console.log('Append operation complete.');
+    });
+
+    ```
+
+#### Opening Files
+  * fs.open(path, flags, [mode], callback)
+    * Flag: The flag to perform operation
+    * Mode: The mode for read, write or readwrite. Defaults to 0666 readwrite.
+
+    Flags
+
+    | Flag | Description                                                |
+    |------|------------------------------------------------------------|
+    | r    | Open file (read only); exception if file does not exist    |
+    | r+   | Open file (read + write); exception if file does not exist |
+    | rs   | Open file (read + write): sync                             |
+    | rs+  | Open file (read + write), tell OS to do so sync            |
+    | w    | Open (write only); creates or appends                      |
+    | wx   | Like 'w', but fails if path exists                         |
+    | w+   | Open file (read + write_; creates or appends               |
+    | wx+  | Like 'w+,' but fails if path exists                        |
+    | a    | Open file (update); creates if path does not exist         |
+    | ax   | Like 'a,' but fails if path exists                         |
+    | a+   | Open file (read + append); creates if it does not exist    |
+    | ax+  | Like 'a+,' but fails if path exists                        |
+
+
+    File open and read
+
+    ```
+    var fs = require('fs');
+
+    fs.open('TestFile.txt', 'r', function (err, fd) {
+
+        if (err) {
+            return console.error(err);
+        }
+
+        var buffr = new Buffer(1024);
+
+        fs.read(fd, buffr, 0, buffr.length, 0, function (err, bytes) {
+
+            if (err) throw err;
+
+            // Print only read bytes to avoid junk.
+            if (bytes > 0) {
+                console.log(buffr.slice(0, bytes).toString());
+            }
+
+            // Close the opened file.
+            fs.close(fd, function (err) {
+                if (err) throw err;
+            });
+        });
+    });
+    ```
