@@ -51,7 +51,7 @@
     | out     | Step out of a function                                          |
     | watch   | Add the expression or variable into watch (eg. watch('data')    |
     | watcher | See the value of all expressions and variables added into watch |
-    | Pause   | Paise running code                                              |    
+    | Pause   | Pause running code                                              |    
 
 
 #### Node Inspector
@@ -81,8 +81,8 @@
 
     * Writing a module
 
-      log.js
       ```
+      // log.js
       var log = {
             info: function (info) {
                 console.log('Info: ' + info);
@@ -100,8 +100,8 @@
 
     * Loading a module
 
-      app.js
       ```
+      // app.js
       var myLogModule = require('./Log.js');
 
       myLogModule.info('Node.js started');
@@ -110,8 +110,8 @@
 3. module.exports
   * literals
 
-    message.js
     ```
+    // message.js
     module.exports = 'Hello world';
 
     //or
@@ -119,8 +119,8 @@
     exports = 'Hello world';
     ```
 
-    app.js
     ```
+    // app.js
     var msg = require('./Messages.js');
 
     console.log(msg);
@@ -128,8 +128,8 @@
 
   * exports - an object which can have methods attached.
 
-    message.js
     ```
+    // message.js
     exports.SimpleMessage = 'Hello world';
 
     //or
@@ -137,8 +137,8 @@
     module.exports.SimpleMessage = 'Hello world';
     ```
 
-    app.js
     ```
+    // app.js
     var msg = require('./Messages.js');
 
     console.log(msg.SimpleMessage);
@@ -157,8 +157,8 @@
   * `npm update <package name>` - updates package
   * `npm uninstall <package name>` - uninstalls package
 
-  package.json
   ```
+  // package.json
   {
     "name": "NodejsConsoleApp",
     "version": "0.0.0",
@@ -222,7 +222,7 @@
   | fs.appendFile(file, data[, options], callback)    | Appends new content to the existing file.     
 
 #### Reading Files
-  * fs.readFile(fileName, [options], callback): async
+  * `fs.readFile(fileName, [options], callback)`: async
     * fileName: full path and name of the file as a string
     * options: can be an object or string with encoding and flag. Default encoding is utf8 and flag is 'r'
     * callback: function with two parameters(err, fd) which will be called when readfile operation completes
@@ -237,7 +237,7 @@
     });
     ```
 
-  * fs.readFileSync(fileName, encoding)
+  * `fs.readFileSync(fileName, encoding)`: sync call to read file
 
     ```
     var fs = require('fs');
@@ -247,12 +247,12 @@
     ```
 
 #### Writing Files
-  * fs.writeFile(filename, data, [options], callback)
+  * `fs.writeFile(filename, data, [options], callback)`
     * only difference from before is 'data' which is just the content to be written in the file
 
-    async: creating AND writing a file
 
     ```
+    // async: creating AND writing a file
     var fs = require('fs');
 
     fs.writeFile('test.txt', 'Hello World!', function (err) {
@@ -263,9 +263,10 @@
     });
     ```
 
-    async: appends to existing file
+
 
     ```
+    // async: appends to existing file
     var fs = require('fs');
 
     fs.appendFile('test.txt', 'Hello World!', function (err) {
@@ -278,7 +279,7 @@
     ```
 
 #### Opening Files
-  * fs.open(path, flags, [mode], callback)
+  * `fs.open(path, flags, [mode], callback)`
     * Flag: The flag to perform operation
     * Mode: The mode for read, write or readwrite. Defaults to 0666 readwrite.
 
@@ -300,9 +301,9 @@
     | ax+  | Like 'a+,' but fails if path exists                        |
 
 
-    File open and read
 
     ```
+    // File open and read
     var fs = require('fs');
 
     fs.open('TestFile.txt', 'r', function (err, fd) {
@@ -332,7 +333,7 @@
 
 
 #### Deleting Files
-  * fs.unlink(path, callback)
+  * `fs.unlink(path, callback)`
 
     File open and read
 
@@ -346,6 +347,3 @@
     });
 
     ```
-
-
-### Debugging
