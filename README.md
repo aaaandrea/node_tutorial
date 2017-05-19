@@ -23,20 +23,20 @@
 
 
 ### Node REPL
-  Read - Eval - Print - Loop
+  short for Read - Eval - Print - Loop
 
-  | REPL Command     | Description                              |
-  |------------------|------------------------------------------|
-  | .help            | Display help commands                    |
-  | tab keys         | Display list of comands                  |
-  | up/down          | See previous commands                    |
-  | .save <filename> | Save current Node REPL session to a file |
-  | .load <filename> | Load specified file                      |
-  | ctrl + c         | Terminate current command                |
-  | ctrl + c (twice) | Exit REPL                                |
-  | ctrl + d         | Exit REPL                                |
-  | .break           | Exit multiline expression                |
-  | .clear           | Exit multiline expression                |
+    | REPL Command     | Description                              |
+    |------------------|------------------------------------------|
+    | .help            | Display help commands                    |
+    | tab keys         | Display list of comands                  |
+    | up/down          | See previous commands                    |
+    | .save <filename> | Save current Node REPL session to a file |
+    | .load <filename> | Load specified file                      |
+    | ctrl + c         | Terminate current command                |
+    | ctrl + c (twice) | Exit REPL                                |
+    | ctrl + d         | Exit REPL                                |
+    | .break           | Exit multiline expression                |
+    | .clear           | Exit multiline expression                |
 
   * open specific file with `node debug <filename>`
     * opens the debugger and starts at the first line
@@ -108,41 +108,41 @@
       ```
 
 3. module.exports
-  * literals
+    * literals
 
-    ```
-    // message.js
-    module.exports = 'Hello world';
+      ```
+      // message.js
+      module.exports = 'Hello world';
 
-    //or
+      //or
 
-    exports = 'Hello world';
-    ```
+      exports = 'Hello world';
+      ```
 
-    ```
-    // app.js
-    var msg = require('./Messages.js');
+      ```
+      // app.js
+      var msg = require('./Messages.js');
 
-    console.log(msg);
-    ```
+      console.log(msg);
+      ```
 
-  * exports - an object which can have methods attached.
+    * exports - an object which can have methods attached.
 
-    ```
-    // message.js
-    exports.SimpleMessage = 'Hello world';
+      ```
+      // message.js
+      exports.SimpleMessage = 'Hello world';
 
-    //or
+      //or
 
-    module.exports.SimpleMessage = 'Hello world';
-    ```
+      module.exports.SimpleMessage = 'Hello world';
+      ```
 
-    ```
-    // app.js
-    var msg = require('./Messages.js');
+      ```
+      // app.js
+      var msg = require('./Messages.js');
 
-    console.log(msg.SimpleMessage);
-    ```
+      console.log(msg.SimpleMessage);
+      ```
 
 
 ### Node Package Manager: npm
@@ -157,39 +157,39 @@
   * `npm update <package name>` - updates package
   * `npm uninstall <package name>` - uninstalls package
 
-  ```
-  // package.json
-  {
-    "name": "NodejsConsoleApp",
-    "version": "0.0.0",
-    "description": "NodejsConsoleApp",
-    "main": "app.js",
-    "author": {
-      "name": "Dev",
-      "email": ""
-    },
-    "dependencies": {
-      "express": "^4.13.3"
+    ```
+    // package.json
+    {
+      "name": "NodejsConsoleApp",
+      "version": "0.0.0",
+      "description": "NodejsConsoleApp",
+      "main": "app.js",
+      "author": {
+        "name": "Dev",
+        "email": ""
+      },
+      "dependencies": {
+        "express": "^4.13.3"
+      }
     }
-  }
-  ```
+    ```
 
 
 ### Building a server
   The Node.js is a single process server, which runs the code in a single thread. This means less resources than a multi-threaded/multi process server. An event loop runs asynchronously, executing the response when the job completes.
 
-  ```
-  // server.js
-  let http = require("http");
+    ```
+    // server.js
+    let http = require("http");
 
-  let onRequest = (request, response) => {
-    response.writeHead(200, {"Content-Type": "text/plain"});
-    response.write("Hello World");
-    response.end();
-  };
+    let onRequest = (request, response) => {
+      response.writeHead(200, {"Content-Type": "text/plain"});
+      response.write("Hello World");
+      response.end();
+    };
 
-  http.createServer(onRequest).listen(8888);
-  ```
+    http.createServer(onRequest).listen(8888);
+    ```
 
   1. Import the core http module from Node.js
   2. Handle incoming requests
@@ -204,23 +204,24 @@
 
   fs methods
 
-  | Method                                            | Description                                                                               |
-  |---------------------------------------------------|-------------------------------------------------------------------------------------------|
-  | fs.readFile(fileName [,options], callback)        | Reads existing file.                                                                      |
-  | fs.writeFile(filename, data[, options], callback) | Writes to the file. If file exists then overwrite the content otherwise creates new file. |
-  | fs.open(path, flags[, mode], callback)            | Opens file for reading or writing                                                         |
-  | fs.rename(oldPath, newPath, callback)             | Renames an existing file.                                                                 |
-  | fs.chown(path, uid, gid, callback)                | Asynchronous chown.                                                                       |
-  | fs.stat(path, callback)                           | Returns fs.stat object which includes important file statistics.                          |
-  | fs.link(srcpath, dstpath, callback)               | Links file asynchronously.                                                                |
-  | fs.symlink(destination, path[, type], callback)   | Symlink asynchronously.                                                                   |
-  | fs.rmdir(path, callback)                          | Renames an existing directory.                                                            |
-  | fs.mkdir(path[, mode], callback)                  | Creates a new directory.                                                                  |
-  | fs.readdir(path, callback)                        | Reads the content of the specified directory.                                             |
-  | fs.utimes(path, atime, mtime, callback)           | Changes the timestamp of the file.                                                        |
-  | fs.exists(path, callback)                         | Determines whether the specified file exists or not.                                      |
-  | fs.access(path[, mode], callback)                 | Tests a user's permissions for the specified file.                                        |
-  | fs.appendFile(file, data[, options], callback)    | Appends new content to the existing file.     
+    | Method                                            | Description                                                                               |
+    |---------------------------------------------------|-------------------------------------------------------------------------------------------|
+    | fs.readFile(fileName [,options], callback)        | Reads existing file.                                                                      |
+    | fs.writeFile(filename, data[, options], callback) | Writes to the file. If file exists then overwrite the content otherwise creates new file. |
+    | fs.open(path, flags[, mode], callback)            | Opens file for reading or writing                                                         |
+    | fs.rename(oldPath, newPath, callback)             | Renames an existing file.                                                                 |
+    | fs.chown(path, uid, gid, callback)                | Asynchronous chown.                                                                       |
+    | fs.stat(path, callback)                           | Returns fs.stat object which includes important file statistics.                          |
+    | fs.link(srcpath, dstpath, callback)               | Links file asynchronously.                                                                |
+    | fs.symlink(destination, path[, type], callback)   | Symlink asynchronously.                                                                   |
+    | fs.rmdir(path, callback)                          | Renames an existing directory.                                                            |
+    | fs.mkdir(path[, mode], callback)                  | Creates a new directory.                                                                  |
+    | fs.readdir(path, callback)                        | Reads the content of the specified directory.                                             |
+    | fs.utimes(path, atime, mtime, callback)           | Changes the timestamp of the file.                                                        |
+    | fs.exists(path, callback)                         | Determines whether the specified file exists or not.                                      |
+    | fs.access(path[, mode], callback)                 | Tests a user's permissions for the specified file.                                        |
+    | fs.appendFile(file, data[, options], callback)    | Appends new content to the existing file.     
+
 
 #### Reading Files
   * `fs.readFile(fileName, [options], callback)`: async
@@ -353,136 +354,136 @@
 ### EventEmitter
 create and handle custom events with events module, which includes the EventEmitter class
 
-  ```
-  // raise and handle events
-  // get the reference of EventEmitter class of events module
-  var events = require('events');
+    ```
+    // raise and handle events
+    // get the reference of EventEmitter class of events module
+    var events = require('events');
 
-  //create an object of EventEmitter class by using above reference
-  var em = new events.EventEmitter();
+    //create an object of EventEmitter class by using above reference
+    var em = new events.EventEmitter();
 
-  //Subscribe for FirstEvent
-  em.on('FirstEvent', function (data) {
-      console.log('First subscriber: ' + data);
-  });
+    //Subscribe for FirstEvent
+    em.on('FirstEvent', function (data) {
+        console.log('First subscriber: ' + data);
+    });
 
-  // Raising FirstEvent
-  em.emit('FirstEvent', 'This is my first Node.js event emitter example.');
+    // Raising FirstEvent
+    em.emit('FirstEvent', 'This is my first Node.js event emitter example.');
 
-  ```
+    ```
 
 
-  ```
-  // event listeners
-  var emitter = require('events').EventEmitter;
+    ```
+    // event listeners
+    var emitter = require('events').EventEmitter;
 
-  var em = new emitter();
+    var em = new emitter();
 
-  //Subscribe FirstEvent
-  em.addListener('FirstEvent', function (data) {
-      console.log('First subscriber: ' + data);
-  });
+    //Subscribe FirstEvent
+    em.addListener('FirstEvent', function (data) {
+        console.log('First subscriber: ' + data);
+    });
 
-  //Subscribe SecondEvent
-  em.on('SecondEvent', function (data) {
-      console.log('First subscriber: ' + data);
-  });
+    //Subscribe SecondEvent
+    em.on('SecondEvent', function (data) {
+        console.log('First subscriber: ' + data);
+    });
 
-  // Raising FirstEvent
-  em.emit('FirstEvent', 'This is my first Node.js event emitter example.');
+    // Raising FirstEvent
+    em.emit('FirstEvent', 'This is my first Node.js event emitter example.');
 
-  // Raising SecondEvent
-  em.emit('SecondEvent', 'This is my second Node.js event emitter example.');
+    // Raising SecondEvent
+    em.emit('SecondEvent', 'This is my second Node.js event emitter example.');
 
-  ```
+    ```
 
 
 #### Key EventEmitter Methods
 
-  | EventEmitter Methods                       | Description                                                                                                                                                                                             |
-  |--------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-  | emitter.addListener(event, listener)       | Adds a listener to the end of the listeners array for the specified event. No checks are made to see if the listener has already been added.                                                            |
-  | emitter.on(event, listener)                | Adds a listener to the end of the listeners array for the specified event. No checks are made to see if the listener has already been added. It can also be called as an alias of emitter.addListener() |
-  | emitter.once(event, listener)              | Adds a one time listener for the event. This listener is invoked only the next time the event is fired, after which it is removed.                                                                      |
-  | emitter.removeListener(event, listener)    | Removes a listener from the listener array for the specified event. Caution: changes array indices in the listener array behind the listener.                                                           |
-  | emitter.removeAllListeners([event])        | Removes all listeners, or those of the specified event.                                                                                                                                                 |
-  | emitter.setMaxListeners(n)                 | By default EventEmitters will print a warning if more than 10 listeners are added for a particular event.                                                                                               |
-  | emitter.getMaxListeners()                  | Returns the current maximum listener value for the emitter which is either set by emitter.setMaxListeners(n) or defaults to EventEmitter.defaultMaxListeners.                                           |
-  | emitter.listeners(event)                   | Returns a copy of the array of listeners for the specified event.                                                                                                                                       |
-  | emitter.emit(event,[arg1],[arg2],[...]) | Raise the specified events with the supplied arguments.                                                                                                                                                 |
-  | emitter.listenerCount(type)                | Returns the number of listeners listening to the type of event.                                                                                                                                         |
+    | EventEmitter Methods                       | Description                                                                                                                                                                                             |
+    |--------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+    | emitter.addListener(event, listener)       | Adds a listener to the end of the listeners array for the specified event. No checks are made to see if the listener has already been added.                                                            |
+    | emitter.on(event, listener)                | Adds a listener to the end of the listeners array for the specified event. No checks are made to see if the listener has already been added. It can also be called as an alias of emitter.addListener() |
+    | emitter.once(event, listener)              | Adds a one time listener for the event. This listener is invoked only the next time the event is fired, after which it is removed.                                                                      |
+    | emitter.removeListener(event, listener)    | Removes a listener from the listener array for the specified event. Caution: changes array indices in the listener array behind the listener.                                                           |
+    | emitter.removeAllListeners([event])        | Removes all listeners, or those of the specified event.                                                                                                                                                 |
+    | emitter.setMaxListeners(n)                 | By default EventEmitters will print a warning if more than 10 listeners are added for a particular event.                                                                                               |
+    | emitter.getMaxListeners()                  | Returns the current maximum listener value for the emitter which is either set by emitter.setMaxListeners(n) or defaults to EventEmitter.defaultMaxListeners.                                           |
+    | emitter.listeners(event)                   | Returns a copy of the array of listeners for the specified event.                                                                                                                                       |
+    | emitter.emit(event,[arg1],[arg2],[...]) | Raise the specified events with the supplied arguments.                                                                                                                                                 |
+    | emitter.listenerCount(type)                | Returns the number of listeners listening to the type of event.                                                                                                                                         |
 
 
 #### eg. Return EventEmitter for a function
   commonly used to subscribe for the events, using the return value of a function and binding them to events using `on()` or `addListener()`
 
-  ```
-  var emitter = require('events').EventEmitter;
+    ```
+    var emitter = require('events').EventEmitter;
 
-  function LoopProcessor(num) {
-      var e = new emitter();
+    function LoopProcessor(num) {
+        var e = new emitter();
 
-      setTimeout(function () {
+        setTimeout(function () {
 
-          for (var i = 1; i <= num; i++) {
-              e.emit('BeforeProcess', i);
+            for (var i = 1; i <= num; i++) {
+                e.emit('BeforeProcess', i);
 
-              console.log('Processing number:' + i);
+                console.log('Processing number:' + i);
 
-              e.emit('AfterProcess', i);
-          }
-      }
-      , 2000)
+                e.emit('AfterProcess', i);
+            }
+        }
+        , 2000)
 
-      return e;
-  }
-  var lp = LoopProcessor(3);
+        return e;
+    }
+    var lp = LoopProcessor(3);
 
-  lp.on('BeforeProcess', function (data) {
-      console.log('About to start the process for ' + data);
-  });
+    lp.on('BeforeProcess', function (data) {
+        console.log('About to start the process for ' + data);
+    });
 
-  lp.on('AfterProcess', function (data) {
-      console.log('Completed processing ' + data);
-  });
-  ```
+    lp.on('AfterProcess', function (data) {
+        console.log('Completed processing ' + data);
+    });
+    ```
 
 #### eg. Extend EventEmitter Class
   Extend a constructor from EventEmitter to emit the events, allowing the new class to inherit the methods to be used in process objects such that they can handle their own events
 
-  ```
-  var emitter = require('events').EventEmitter;
+    ```
+    var emitter = require('events').EventEmitter;
 
-  var util = require('util');
+    var util = require('util');
 
-  function LoopProcessor(num) {
-      var me = this;
+    function LoopProcessor(num) {
+        var me = this;
 
-      setTimeout(function () {
+        setTimeout(function () {
 
-          for (var i = 1; i <= num; i++) {
-              me.emit('BeforeProcess', i);
+            for (var i = 1; i <= num; i++) {
+                me.emit('BeforeProcess', i);
 
-              console.log('Processing number:' + i);
+                console.log('Processing number:' + i);
 
-              me.emit('AfterProcess', i);
-          }
-      }
-      , 2000)
+                me.emit('AfterProcess', i);
+            }
+        }
+        , 2000)
 
-      return this;
-  }
+        return this;
+    }
 
-  util.inherits(LoopProcessor, emitter)
+    util.inherits(LoopProcessor, emitter)
 
-  var lp = new LoopProcessor(3);
+    var lp = new LoopProcessor(3);
 
-  lp.on('BeforeProcess', function (data) {
-      console.log('About to start the process for ' + data);
-  });
+    lp.on('BeforeProcess', function (data) {
+        console.log('About to start the process for ' + data);
+    });
 
-  lp.on('AfterProcess', function (data) {
-      console.log('Completed processing ' + data);
-  });
+    lp.on('AfterProcess', function (data) {
+        console.log('Completed processing ' + data);
+    });
 
-  ```
+    ```
