@@ -27,6 +27,7 @@
 
     [REPL Commands](https://nodejs.org/api/repl.html)
 
+
     | REPL Command     | Description                              |
     |------------------|------------------------------------------|
     | .help            | Display help commands                    |
@@ -205,6 +206,7 @@
   The fs module is responsible for asynchronous and synchornous I/O file operations
 
     [fs module methods](https://nodejs.org/api/fs.html)
+
 
     | Method                                            | Description                                                                               |
     |---------------------------------------------------|-------------------------------------------------------------------------------------------|
