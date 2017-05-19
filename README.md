@@ -25,7 +25,7 @@
 ### Node REPL
   short for Read - Eval - Print - Loop
 
-    REPL Commands
+    [REPL Commands](https://nodejs.org/api/repl.html)
 
     | REPL Command     | Description                              |
     |------------------|------------------------------------------|
@@ -204,7 +204,7 @@
 ### Files
   The fs module is responsible for asynchronous and synchornous I/O file operations
 
-    fs module methods
+    [fs module methods](https://nodejs.org/api/fs.html)
 
     | Method                                            | Description                                                                               |
     |---------------------------------------------------|-------------------------------------------------------------------------------------------|
