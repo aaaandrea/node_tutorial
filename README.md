@@ -25,7 +25,7 @@
 ### Node REPL
   short for Read - Eval - Print - Loop
 
-    REPL Commands - [doc link](https://nodejs.org/api/repl.html)
+  * REPL Commands - [doc link](https://nodejs.org/api/repl.html)
 
     | REPL Command     | Description                              |
     |------------------|------------------------------------------|
@@ -43,7 +43,7 @@
   * open specific file with `node debug <filename>`
     * opens the debugger and starts at the first line
 
-    debugging commands - [doc link](https://nodejs.org/api/debugger.html)
+    * debugger commands - [doc link](https://nodejs.org/api/debugger.html)
 
     | Command | Description                                                     |
     |---------|-----------------------------------------------------------------|
@@ -204,26 +204,25 @@
 ### Files
   The fs module is responsible for asynchronous and synchornous I/O file operations
 
-    [fs module methods](https://nodejs.org/api/fs.html)
+    * fs module methods - [doc link](https://nodejs.org/api/fs.html)
 
-
-    | Method                                            | Description                                                                               |
-    |---------------------------------------------------|-------------------------------------------------------------------------------------------|
-    | fs.readFile(fileName [,options], callback)        | Reads existing file.                                                                      |
-    | fs.writeFile(filename, data[, options], callback) | Writes to the file. If file exists then overwrite the content otherwise creates new file. |
-    | fs.open(path, flags[, mode], callback)            | Opens file for reading or writing                                                         |
-    | fs.rename(oldPath, newPath, callback)             | Renames an existing file.                                                                 |
-    | fs.chown(path, uid, gid, callback)                | Asynchronous chown.                                                                       |
-    | fs.stat(path, callback)                           | Returns fs.stat object which includes important file statistics.                          |
-    | fs.link(srcpath, dstpath, callback)               | Links file asynchronously.                                                                |
-    | fs.symlink(destination, path[, type], callback)   | Symlink asynchronously.                                                                   |
-    | fs.rmdir(path, callback)                          | Renames an existing directory.                                                            |
-    | fs.mkdir(path[, mode], callback)                  | Creates a new directory.                                                                  |
-    | fs.readdir(path, callback)                        | Reads the content of the specified directory.                                             |
-    | fs.utimes(path, atime, mtime, callback)           | Changes the timestamp of the file.                                                        |
-    | fs.exists(path, callback)                         | Determines whether the specified file exists or not.                                      |
-    | fs.access(path[, mode], callback)                 | Tests a user's permissions for the specified file.                                        |
-    | fs.appendFile(file, data[, options], callback)    | Appends new content to the existing file.     
+      | Method                                            | Description                                                                               |
+      |---------------------------------------------------|-------------------------------------------------------------------------------------------|
+      | fs.readFile(fileName [,options], callback)        | Reads existing file.                                                                      |
+      | fs.writeFile(filename, data[, options], callback) | Writes to the file. If file exists then overwrite the content otherwise creates new file. |
+      | fs.open(path, flags[, mode], callback)            | Opens file for reading or writing                                                         |
+      | fs.rename(oldPath, newPath, callback)             | Renames an existing file.                                                                 |
+      | fs.chown(path, uid, gid, callback)                | Asynchronous chown.                                                                       |
+      | fs.stat(path, callback)                           | Returns fs.stat object which includes important file statistics.                          |
+      | fs.link(srcpath, dstpath, callback)               | Links file asynchronously.                                                                |
+      | fs.symlink(destination, path[, type], callback)   | Symlink asynchronously.                                                                   |
+      | fs.rmdir(path, callback)                          | Renames an existing directory.                                                            |
+      | fs.mkdir(path[, mode], callback)                  | Creates a new directory.                                                                  |
+      | fs.readdir(path, callback)                        | Reads the content of the specified directory.                                             |
+      | fs.utimes(path, atime, mtime, callback)           | Changes the timestamp of the file.                                                        |
+      | fs.exists(path, callback)                         | Determines whether the specified file exists or not.                                      |
+      | fs.access(path[, mode], callback)                 | Tests a user's permissions for the specified file.                                        |
+      | fs.appendFile(file, data[, options], callback)    | Appends new content to the existing file.     
 
 
 #### Reading Files
